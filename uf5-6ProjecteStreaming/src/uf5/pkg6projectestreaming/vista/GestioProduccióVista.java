@@ -66,6 +66,12 @@ public class GestioProduccióVista {
     RadioButton rb1;
     RadioButton rb2;
 
+    /**
+     * Mètode que genera la part central de la interfície de la gestió de
+     * produccions
+     *
+     * @return Un VBox que conté els diferents elements
+     */
     public VBox centerGestioProduccio() {
         VBox vb = new VBox();
 
@@ -88,6 +94,12 @@ public class GestioProduccióVista {
 
     }
 
+    /**
+     * Mètode que conté les dades d'una producció
+     *
+     * @return Un VBox que conté els diferents elements amb les dades de les
+     * produccions
+     */
     private VBox dadesProduccio() {
 
         VBox vb = new VBox();
@@ -191,7 +203,7 @@ public class GestioProduccióVista {
                     lblDuradaTotal.setVisible(false);
                     txtDuradaTotal.setVisible(false);
                 } else {
-                    
+
                     lblDurada.setVisible(false);
                     txtDurada.setVisible(false);
                     lblNumCapituls.setVisible(true);
@@ -202,98 +214,165 @@ public class GestioProduccióVista {
             }
 
         });
-        
+
         gpps.setAlignment(Pos.CENTER);
         gpps.setHgap(10);
         gpps.setVgap(10);
-        gpps.setPadding(new Insets(20,20,20,20));
-        
+        gpps.setPadding(new Insets(20, 20, 20, 20));
+
         vb.setSpacing(20);
-        vb.getChildren().addAll(gp,gpps);
+        vb.getChildren().addAll(gp, gpps);
         vb.setAlignment(Pos.CENTER);
-        
-        
+
         return vb;
     }
-    
-    private HBox botonsGestio(){
-        
-        Button btnConsulta = new  Button("Consulta");
+
+    /**
+     * Mètode que genera un HBox que conté els diferents botons de gestió
+     *
+     * @return Un Hbox que conté els botons
+     */
+    private HBox botonsGestio() {
+
+        Button btnConsulta = new Button("Consulta");
         Button btnAlta = new Button("Alta");
         Button btnModificacio = new Button("Modificació");
         Button btnBaixa = new Button("Baixa");
         Button btnInicialitza = new Button("Inicialitza");
-        
+
         btnConsulta.setOnAction(e -> consultaProduccio());
-        
-        btnAlta.setOnAction(new EventHandler<ActionEvent>(){
+
+        btnAlta.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
                 System.out.println("Alta Peli...");
                 AlertVista.alertInformacio("Opció no implementada");
-                
+
             }
-            
+
         });
-        
-        btnModificacio.setOnAction(new EventHandler<ActionEvent>(){
+
+        btnModificacio.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                AlertVista.alertInformcio("Opcio no implementada");
+                AlertVista.alertInformacio("Opcio no implementada");
                 System.out.println("Modificant pel·licula...");
             }
-         });
-        
-        btnInicialitza.setOnAction((e ->inicialitzarCampsPantallaProduccio()));
-        
+        });
+
+        btnInicialitza.setOnAction((e -> inicialitzarCampsPantallaProduccio()));
+
         HBox hbBotons = new HBox(btnConsulta, btnAlta, btnModificacio, btnBaixa, btnInicialitza);
-        
+
         return hbBotons;
     }
-    
-    private void consultaProduccio(){
-        
-        if (txtID.getText().equals("")){
+
+    /**
+     * Mètode que fa una consulta d'una producció
+     */
+    private void consultaProduccio() {
+
+        if (txtID.getText().equals("")) {
             AlertVista.alertWarning("L'identificador ha de tenir un valor");
-        }else{
-            
+        } else {
+
             int id = Integer.parseInt(txtID.getText());
-            
+
             inicialitzarCampsPantallaProduccio();
-            
+
             ProduccioDAO prodDAO = new ProduccioDAO();
-            
+
             Produccio produccio = prodDAO.consultaProduccioBD(id);
             System.out.println(produccio);
-            if(produccio == null){
+            if (produccio == null) {
                 AlertVista.alertInformacio("No existeix aquest identificador de produccio");
-            }else{
+            } else {
                 dadesProduccioAPantalla(produccio);
                 PeliculaDAO peliDAO = new PeliculaDAO();
                 Pelicula peli = peliDAO.consultaPeliculaBD(id);
                 System.out.println(peli);
-                if(peli != null){
+                if (peli != null) {
                     dadesPeliculaAPantalla(peli);
-                }else{
+                } else {
                     SerieDAO serieDAO = new SerieDAO();
-                    Serie serie ) serieDAO.consultarSerieBD(id);
+                    Serie serie = serieDAO.consultaSerieBD(id);
+                    dadesSerieAPantalla(serie);
                 }
             }
         }
     }
-    
-    private void dadesProduccioAPantalla(Produccio p){
-        
+
+    /**
+     * Mètode que inicialitza els camps de la pantalla producció
+     */
+    void inicialitzarCampsPantallaProduccio() {
+
+        txtID.setText("");
+        txtNom.setText("");
+        txtAny.setText("");
+        txtCategoria.setText("");
+        txtDirector.setText("");
+        txtActor.setText("");
+        txtNacionalitat.setText("");
+        txtFavorit.setText("");
+
+        rb1.setSelected(false);
+        rb2.setSelected(false);
+
+        lblDurada.setVisible(false);
+        txtDurada.setVisible(false);
+
+        lblDuradaTotal.setVisible(false);
+        txtDuradaTotal.setVisible(false);
+        lblNumCapituls.setVisible(false);
+        txtNumCapituls.setVisible(false);
+
+    }
+
+    /**
+     * Mètode que estableix les dades de la producció a la pantalla
+     *
+     * @param p La producció de la que s'obtenen les dades
+     */
+    private void dadesProduccioAPantalla(Produccio p) {
+
         txtID.setText(String.valueOf(p.getId()));
         txtNom.setText(p.getNom());
         txtNacionalitat.setText(p.getNacionalitat());
         txtAny.setText(String.valueOf(p.getAny()));
         txtFavorit.setText(String.valueOf(p.getFavorit()));
     }
-    
-    private void dadesPeliculaAPantalla(Pelicula p){
+
+    /**
+     * Mètode que estableix les dades d'una pelicula a la pantalla
+     *
+     * @param p La pelicula de la que s'obtenen les dades
+     */
+    private void dadesPeliculaAPantalla(Pelicula p) {
         rb1.setSelected(true);
         txtDurada.setText(String.valueOf(p.getDurada()));
-        txtCategoria
+        txtCategoria.setText(p.getCategoria(0));
+        txtDirector.setText(p.getDirector(0));
+        txtActor.setText(p.getActor(0));
+
     }
+
+    /**
+     * Mètode que estableix les dades d'una serie a la pantalla
+     *
+     * @param s La serie de la que s'obtenen les dades
+     */
+    private void dadesSerieAPantalla(Serie s) {
+
+        rb2.setSelected(true);
+        txtDuradaTotal.setText(String.valueOf(s.getDuradaTotal()));
+        txtNumCapituls.setText(String.valueOf(s.getNumCapituls()));
+        txtCategoria.setText(s.getCategoria(0));
+        txtDirector.setText(s.getDirector(0));
+        txtActor.setText(s.getActor(0));
+        txtDuradaTotal.setVisible(true);
+        txtNumCapituls.setVisible(true);
+
+    }
+
 }

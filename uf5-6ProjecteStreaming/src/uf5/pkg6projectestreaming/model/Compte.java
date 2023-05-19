@@ -1,10 +1,9 @@
-
 package uf5.pkg6projectestreaming.model;
 
 import java.time.LocalDate;
 
 public class Compte {
-    
+
     private int idCompte;
     private String usuari;
     private LocalDate dataAlta;
@@ -16,8 +15,6 @@ public class Compte {
     public int getIdCompte() {
         return idCompte;
     }
-
-
 
     public void setIdCompte(int idCompte) {
         this.idCompte = idCompte;
@@ -75,5 +72,5 @@ public class Compte {
     public String toString() {
         return "Compte{" + "idCompte=" + idCompte + ", usuari=" + usuari + ", dataAlta=" + dataAlta + ", idClient=" + idClient + ", DNI=" + DNI + ", nomCli=" + nomCli + ", idModalitat=" + idModalitat + '}';
     }
-   
+
 }

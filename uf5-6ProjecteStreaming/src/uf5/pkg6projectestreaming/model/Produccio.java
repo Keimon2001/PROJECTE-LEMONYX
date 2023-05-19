@@ -1,40 +1,59 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package uf5.pkg6projectestreaming.model;
 
-/**
- *
- * @author DAM
- */
 public class Produccio {
-        private int id;
+
+    private int id;
     private String nom;
     private String nacionalitat;
     private int any;
     private int favorit;
-    
-    public Produccio(){
-        
+
+    /**
+     * Constructor per defecte de la classe producció
+     */
+    public Produccio() {
+
     }
-    
-    public Produccio(String nom, int any, String genere, String categoria, String director, String actor){
+
+    /**
+     * Constructor de la classe produccio que permet establir diferents
+     * paràmetres
+     *
+     * @param nom El nom de la producció
+     * @param any L'any de la producció
+     * @param genere El genere de la producció
+     * @param categoria La categoria de la producció
+     * @param director El director de la producció
+     * @param actor L'actor de la producció
+     */
+    public Produccio(String nom, int any, String genere, String categoria, String director, String actor) {
         this.nom = nom;
         this.any = any;
     }
-    
-    public Produccio(int id, String nom, int any, String genere, String categoria, String director, String actor){
+
+    /**
+     * Constructor de la classe produccio que permet establir diferents
+     * paràmetres
+     *
+     * @param id L'ID de la producció
+     * @param nom El nom de la producció
+     * @param any L'any de la producció
+     * @param genere El genere de la producció
+     * @param categoria La categoria de la producció
+     * @param director El director de la producció
+     * @param actor L'actor de la producció
+     */
+    public Produccio(int id, String nom, int any, String genere, String categoria, String director, String actor) {
         this.id = id;
         this.nom = nom;
         this.any = any;
     }
-    
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -69,6 +88,5 @@ public class Produccio {
     public void setFavorit(int favorit) {
         this.favorit = favorit;
     }
-    
-    
+
 }

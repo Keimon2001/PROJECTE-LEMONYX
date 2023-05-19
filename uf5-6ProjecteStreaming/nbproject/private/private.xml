@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/vista/ComptesTarifaVista.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/Aplicacio/PlataformaStreamingMVC.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/model/Produccio.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/basedades/CompteDAO.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/basedades/PeliculaDAO.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/vista/GestioProduccióVista.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/basedades/Conexio.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/model/Compte.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/basedades/ProduccioDAO.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/model/Pelicula.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/Aplicacio/AplicacioStreaming.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/model/Serie.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/basedades/SerieDAO.java</file>
-            <file>file:/C:/Users/DAM/Documents/NetBeansProjects/MP05-fullexercicis3-Ex33/uf5-6ProjecteStreaming/src/uf5/pkg6projectestreaming/vista/AplicacioVista.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
