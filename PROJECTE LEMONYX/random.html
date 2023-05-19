@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body:before {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: url(imatges/random.jpg) no-repeat center fixed;
+            background-size: cover;
+            animation: animate 30s infinite;
+        }
+
+        @keyframes animate {
+            from {scale: 1}
+            to {scale: 2}
+        }
+
+        canvas {
+            position: relative;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script src="js/random.js"></script>
+</body>
+</html>

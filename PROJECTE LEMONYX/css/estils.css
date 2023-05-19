@@ -1,0 +1,369 @@
+:root {
+  --groc: #ffff00;
+  --fondo: #444444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PROVA LUPA */
+
+.box{   
+  max-width: 400px;
+  width: 100%;
+}
+
+.box .search-box{
+  position: relative;
+  height: 50px;
+  max-width: 50px;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+#check:checked ~ .search-box{
+  max-width: 380px;
+
+}
+.search-box input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding-left: 20px;
+  font-size: 18px;
+  background-color: #666666;
+}
+
+.search-box .icon{
+  position:absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background-color: #666666;
+  color: #ffff00;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+#check:checked ~ .search-box .icon{
+  background-color: #666666; ;
+  color: #ffff00;
+  border-radius: 0 25px 25px 0;
+}
+
+.box input{
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#check{
+ display: none;
+}
+
+
+/* ANIMACIÓ INTRO */
+
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  background: #444444;
+  transition: 1s;
+}
+
+.intro p{
+  color:lightyellow;
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+.logo{
+  font-size: 2.5rem;
+  color: yellow;
+}
+
+.part-logo{
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  bottom:-20px;
+  opacity: 0;
+}
+
+.part-logo.active {
+  bottom: 0;
+  opacity:1;
+  transition: ease-in-out.5s;
+}
+
+.part-logo.fade{
+  bottom: 250px;
+  opacity: 0;
+  transition: ease-in-out .5s;
+}
+
+.contingut{
+  width: 100%;
+  padding: 50px;
+  font-size: 2rem;
+}
+
+.intro img{
+  width: 390px;
+  top: 150px;
+  position: absolute;
+}
+
+/* CSS MAIN */
+
+body {
+  background: var(--fondo);
+  font-family: 'Open Sans', sans-serif;
+  /* width: 90%;
+  margin: auto; */
+}
+
+.contenidor {
+  width: 90%;
+  margin: auto;
+}
+
+header {
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  margin: 20px;
+}
+
+header .contenidor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* header .contenidor .logo {
+  width: 70px;
+} */
+
+header .logoLletra {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: normal;
+  color: var(--groc);
+  font-size: 40px;
+}
+
+header nav a {
+  color: #aaa;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.actiu {
+  color: white;
+}
+
+.pelicula_portada {
+  font-size: 16px;
+  min-height: 40.62rem;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../imatges/backdrop.jpg);
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 3.12em;
+  display: flex;
+  align-items: end;
+}
+
+.pelicula_portada .contenidor {
+  margin: 0 auto;
+  margin-bottom: 3.25em;
+}
+
+.pelicula_portada .titol {
+  font-weight: 600;
+  font-size: 3.12em;
+  margin-bottom: 0.4em;
+}
+
+.pelicula_portada .sinopsis {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.75em;
+  max-width: 50%;
+  margin-bottom: 1.25em;
+}
+
+.pelicula_portada .boto {
+  background: rgba(0, 0, 0, .50);
+  border: none;
+  border-radius: 0.31em;
+  padding: 0.93em 1.87em;
+  color: white;
+  margin-right: 1.25em;
+  cursor: pointer;
+  transition: .3s ease all;
+  font-size: 1.12em;
+}
+
+.pelicula_portada .boto:hover {
+  background: white;
+  color: black;
+}
+
+.pelicula_portada .boto span {
+  margin-right: 1.25em;
+}
+
+.contenidor_titol_controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.contenidor_titol_controls h3 {
+  color: white;
+  font-size: 30px;
+}
+
+.contenidor_titol_controls .indicadors button {
+  background: white;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+
+.contenidor_titol_controls .indicadors button:hover,
+.contenidor_titol_controls .indicadors button.actiu {
+  background: var(--groc);
+}
+
+
+.pelicula_recomanada {
+  margin-bottom: 70px;
+
+}
+
+.pelicula_recomanada .contenidor_principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.pelicula_recomanada .contenidor_principal .fletxa_esq,
+.pelicula_recomanada .contenidor_principal .fletxa_dre {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: white;
+  cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all;
+}
+
+.pelicula_recomanada .contenidor_principal .fletxa_esq:hover,
+.pelicula_recomanada .contenidor_principal .fletxa_dre:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.pelicula_recomanada .contenidor_principal .fletxa_esq {
+  left: 0;
+}
+
+.pelicula_recomanada .contenidor_principal .fletxa_dre {
+  right: 0;
+}
+
+.pelicula_recomanada .contenidor_carousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.pelicula_recomanada .contenidor_carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.pelicula_recomanada .contenidor_carousel .carousel .pelicula {
+  min-width: 20%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.pelicula_recomanada .contenidor_carousel .carousel .pelicula.hover {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.pelicula_recomanada .contenidor_carousel .carousel .pelicula img {
+  width: 100%;
+  vertical-align: top;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  header .logoLletra {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  header .contenidor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pelicula_portada {
+    font-size: 14px;
+  }
+
+  .pelicula_portada .sinopsis {
+    max-width: 100%;
+  }
+
+  .pelicula_recomanada .contenidor_carousel {
+    overflow: visible;
+  }
+
+  .pelicula_recomanada .contenidor_carousel .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .pelicula_recomanada .indicadors,
+  .pelicula_recomanada .fletxa_esq,
+  .pelicula_recomanada .fletxa_dre {
+    display: none;
+  }
+
+}

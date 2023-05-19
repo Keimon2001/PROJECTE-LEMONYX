@@ -1,0 +1,248 @@
+:root {
+    --groc: #ffff00;
+    --fondo: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ANIMACIÓ INTRO */
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    background: #444444;
+    transition: 1s;
+  }
+  
+  .intro p{
+    color:lightyellow;
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+  .logo{
+    font-size: 2.5rem;
+    color: yellow;
+  }
+  
+  .part-logo{
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    bottom:-20px;
+    opacity: 0;
+  }
+  
+  .part-logo.active {
+    bottom: 0;
+    opacity:1;
+    transition: ease-in-out.5s;
+  }
+  
+  .part-logo.fade{
+    bottom: 250px;
+    opacity: 0;
+    transition: ease-in-out .5s;
+  }
+  
+  .contingut{
+    width: 100%;
+    padding: 50px;
+    font-size: 2rem;
+  }
+  
+  .intro img{
+    width: 390px;
+    top: 150px;
+    position: absolute;
+  }
+
+  /* CSS LOGIN */
+.all {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.445)), url(../imatges/backdrop.jpg);
+    background-position: top;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.logoLletra {
+    width: 16rem;
+    position: relative;
+    top: 25px;
+    left: 3rem;
+    z-index: 100;
+}
+
+.signin {
+    background-color: #000000b4;
+    border-radius: 5px;
+    color: white;
+    margin: 4rem auto 10rem;
+    padding: 7rem 6rem 15rem;
+    width: 45rem;
+}
+
+.signin h2 {
+    margin: 0 0 25px;
+    font-size: 30px;
+}
+
+.signin input {
+    display: block;
+    color: white;
+    width: 100%;
+    height: 5rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.signin input[type="text"],
+.signin input[type="password"] {
+    background-color: #444444;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+.signin input[type="text"] ::-webkit-input-placeholder,
+.signin input[type="password"] ::-webkit-input-placeholder {
+    color: lightgrey;
+    font-size: 16px;
+}
+
+.signin input[type="submit"] {
+    background-color: var(--groc);
+    font-size: 16px;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+.signin .ajuda {
+    color: lightgray;
+    margin: 0;
+    margin-top: 12px;
+    padding: 0;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin .ajuda .check {
+    display: flex;
+    align-items: center;
+}
+
+.check input {
+    width: 2rem;
+    height: 2rem;
+}
+
+.check label {
+    margin-left: 5px;
+    width: 100%;
+}
+
+.ajuda .need a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.ajuda .need a:hover {
+    text-decoration: underline;
+}
+
+.footer_signin {
+    margin-top: 3rem;
+}
+
+.footer_signin .login {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 13px;
+}
+
+.login .google {
+    width: 2rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+.footer_signin .new {
+    margin-top: 12px;
+    font-size: 17px;
+    color: lightgrey;
+    font-weight: lighter;
+}
+
+.footer_signin .new a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.footer_signin .new a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 25px 4rem 5rem;
+    background-color: #000000b4;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer_info {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer_info p {
+    color: lightgrey;
+}
+
+.footer_info p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer_links {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_links_item {
+    width: 25rem;
+    min-width: 20rem;
+}
+
+.footer_links_item a {
+    color: gray;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footer_info select {
+    background-color: black;
+    border: 1px solid rgba(128, 128, 128, .466);
+    color: gray;
+    outline: none;
+    padding: 13px;
+}
