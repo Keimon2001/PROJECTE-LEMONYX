@@ -1,0 +1,265 @@
+:root {
+    --groc: #ffff00;
+    /* --fondo: #444444; */
+    --fondo: #1f2029;
+    --lletra: #c4c3ca;
+    --lletraGroc: #ffeba7;
+    --fondoHeader: #2b2e38;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    background: var(--fondo);;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* HEADER */
+
+header {
+
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--fondoHeader);
+  padding: 15px 12%;
+  transition: all .50s ease;
+}
+
+.logoNav {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.logoNav {
+  color: var(--groc);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+
+
+.navbar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: var(--lletra);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  margin: 0px 30px;
+  transition: all .50s ease;
+}
+
+.navbar a:hover {
+  color: var(--groc);
+}
+
+.navbar a.actiu {
+  color: var(--groc);
+}
+
+.inici {
+  display: flex;
+  align-items: center;
+}
+
+.inici a {
+  margin-right: 25px;
+  margin-left: 10px;
+  color: var(--lletra);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all .50s ease;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user i {
+  color: var(--lletra);
+  font-size: 28px;
+  margin-right: 7px;
+}
+
+.inici a:hover {
+  text-decoration: none;
+  color: var(--groc);
+}
+
+.inici i:hover {
+  text-decoration: none;
+  color: var(--groc);
+}
+
+
+#menu-icon {
+  font-size: 35px;
+  color: var(--lletra);
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+#menu-icon i:hover {
+  text-decoration: none;
+  color: var(--groc);
+}
+
+
+
+/* PLANS */
+
+.taula_preus {
+    padding: 4rem 0rem;
+}
+
+.taula_preus .detalls {
+    width: 90%;
+    max-width: 50rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: white;
+}
+
+.taula_preus .detalls h2 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+    color: var(--lletraGroc);
+}
+
+.taula_preus .detalls p {
+    font-size: 15px;
+}
+
+.taula_preus .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 0rem;
+    padding: 2rem;
+}
+
+.taula_preus .grid .box {
+    width: 25rem;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.taula_preus .grid .box .titol {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.taula_preus .grid .box .preu {
+    margin-bottom: 2rem;
+}
+
+.taula_preus .grid .box .preu b {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.taula_preus .grid .box .inclou > * {
+    color: black;
+    padding: 8px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.taula_preus .grid .box .boto button {
+    width: 100%;
+    margin: 25px 0px 0px;
+    padding: 10px;
+    background: var(--lletraGroc);
+    color: var(--fondoHeader);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.taula_preus .grid .box.pro {
+    transform: scale(1.1);
+    background: var(--lletraGroc);
+}
+
+.taula_preus .grid .box.pro .titol {
+    color: black;
+}
+
+.taula_preus .grid .box.pro .preu {
+    color: black;
+}
+
+.taula_preus .grid .box.pro .inclou > * {
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.taula_preus .grid .box.pro .boto button {
+    background: var(--fondoHeader);
+    color: var(--lletraGroc);
+}
+
+
+
+/* FOOTER */
+footer {
+  background-color: var(--fondoHeader);
+  position: fixed;
+  text-align: center;
+  height: 4rem;
+  color: var(--lletra);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+@media (max-width:800px){
+    .taula_preus .grid {
+        gap: 20px;
+    }
+
+    .taula_preus .grid .box.pro {
+        transform: scale(1);
+    }
+}
